@@ -1,0 +1,53 @@
+{
+    "accounts": {
+        "all_users": {
+            "admin1": "pwd_for_admin1",
+            "user1": "user1"
+        },
+        "admin_users": ["admin1"],
+        "receiver": ["user1"],
+        "sender": ["user1"]
+    },
+    "resource_map": {
+        "granted_type": ["read", "write", "delete"],
+        "resources": {
+            "api1": {
+                "api_meta": {
+                    "description": "A repo for general STIX data.",
+                    "versions": [
+                        "application/taxii+json;version=2.1"
+                    ],
+                    "max_content_length": 9765625,
+                    "status": []
+                },
+                "resources": {
+                    "observations": {
+                        "resource_meta": {
+                            "description": "testing collection for uploads",
+                            "access": {
+                                "sender": [0],
+                                "receiver": [0]
+                            },
+                            "media_types": [
+                                "application/stix+json;version=2.1"
+                            ],
+                            "manifest": {}
+                        }
+                    }
+                }
+            }
+        }
+
+    },
+    "broker_info": {
+        "broker_meta": {
+            "title": "Test broker1",
+            "description": "Test broker for COCA",
+            "contact": "sample@email.address",
+            "default": "api1"
+        },
+        "host": "0.0.0.0",
+        "port": 8815,
+        "scheme": "grpc"
+    }
+}
